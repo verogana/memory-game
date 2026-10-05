@@ -5,6 +5,8 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #222;
 }
 
 .app {
@@ -28,6 +30,13 @@ body {
 .header button {
   padding: 10px 15px;
   cursor: pointer;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: white;
+}
+
+.header button:hover {
+  background: #eaeaea;
 }
 
 .game-info {
@@ -35,6 +44,8 @@ body {
   justify-content: center;
   gap: 40px;
   margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .game-info p {
@@ -51,7 +62,90 @@ body {
   aspect-ratio: 1;
   font-size: 40px;
   cursor: pointer;
-  background: white;
+  background: #ddd;
   border: 2px solid #333;
   border-radius: 10px;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  background: #ccc;
+}
+
+.card.matched {
+  background: #c8e6c9;
+  cursor: default;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+.modal {
+  min-width: 300px;
+  max-width: 90%;
+  padding: 30px;
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.modal ol {
+  padding-left: 30px;
+  text-align: left;
+  line-height: 1.8;
+}
+
+.modal button {
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: white;
+}
+
+.modal button:hover {
+  background: #eaeaea;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 20px 10px;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header h1 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .game-board {
+    gap: 8px;
+  }
+
+  .card {
+    font-size: 28px;
+  }
+
+  .game-info {
+    gap: 20px;
+    font-size: 16px;
+  }
 }
